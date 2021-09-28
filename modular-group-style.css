@@ -2,6 +2,7 @@ body
 {
   background-color: #fab73d;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  max-width: 1000px;
 }
 
 header, footer

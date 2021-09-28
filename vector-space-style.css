@@ -2,6 +2,7 @@ body
 {
   background-color: #fab73d;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  max-width: 1000px;
 }
 
 header, footer
@@ -28,4 +29,14 @@ header > h1
   display: flex;
   justify-content: space-between;
   max-width: 800px;
+}
+
+table, th, td
+{
+  border: 1px solid black;
+}
+
+table
+{
+  border-collapse: collapse;
 }
