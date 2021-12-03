@@ -1,0 +1,17 @@
+#jorr-picasso
+{
+  position: relative;
+  left: 30%;
+}
+
+#jorr-picasso:hover
+{
+  position: relative;
+  left: 30%;
+  transform: scale(1.05);
+}
+
+#jorr-wrapper > img
+{
+  cursor: url('mouse-cursor.png'), default;
+}
