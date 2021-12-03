@@ -1,14 +1,19 @@
 #jorr-picasso
 {
   position: relative;
-  left: 30%;
 }
 
 #jorr-picasso:hover
 {
   position: relative;
-  left: 30%;
   transform: scale(1.05);
+}
+
+#jorr-wrapper
+{
+  position: relative;
+  left: 350px;
+  top: -220px;
 }
 
 #jorr-wrapper > img
@@ -16,7 +21,7 @@
   cursor: url('mouse-cursor.png'), default;
 }
 
-h1, #number-display
+h1, #number-display, #tps-display
 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-align: center;

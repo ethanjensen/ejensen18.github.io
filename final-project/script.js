@@ -25,7 +25,7 @@ function displayResults(results)
 
 numTokens = 0;
 buildings = [0,0,0,0,0,0];
-buildingPrices = [10,100,1000,10000,100000,1000000]
+buildingPrices = [10,60,360,2160,12960,77760]
 buildingNames = ["parseInt", "Regular expressions", "JSON.parse()", "xml parser", "compiler", "natural language processing"];
 for (let i = 0; i < buildings.length; i++)
 {
@@ -48,31 +48,14 @@ let framesElapsed = 0;
 
 function frame()
 {
-  document.getElementById("number-display").innerText = "Parsed Tokens:" + numTokens.toString();
-  if (framesElapsed % 200 == 0)
-  {
-    numTokens += buildings[0];
-  }
-  if (framesElapsed % 100 == 0)
-  {
-    numTokens += buildings[1];
-  }
-  if (framesElapsed % 50 == 0)
-  {
-    numTokens += buildings[2];
-  }
-  if (framesElapsed % 25 == 0)
-  {
-    numTokens += buildings[3];
-  }
-  if (framesElapsed % 12 == 0)
-  {
-    numTokens += buildings[4];
-  }
-  if (framesElapsed % 6 == 0)
-  {
-    numTokens += buildings[5];
-  }
+  document.getElementById("number-display").innerText = "Parsed Tokens:" + Math.ceil(numTokens).toString();
+  document.getElementById("tps-display").innerText = "Tokens Per Second: " + (buildings[0] + 4*buildings[1] + 16*buildings[2] + 64*buildings[3] + 256*buildings[4] + 1024*buildings[5]).toString();
+  numTokens += 0.005*buildings[0];
+  numTokens += 0.02*buildings[1];
+  numTokens += 0.08*buildings[2];
+  numTokens += 0.32*buildings[3];
+  numTokens += 1.28*buildings[4];
+  numTokens += 4.096*buildings[5];
   framesElapsed += 1;
 }
 
@@ -92,6 +75,7 @@ function buyBuilding(n)
 function displayCost(n)
 {
   document.getElementById(buildingNames[n]).innerText = "Buy " + buildingNames[n] + "    Price: " + Math.ceil(buildingPrices[n]);
+  document.getElementById("num" + buildingNames[n]).innerText = "Number of " + buildingNames[n] + ": " + buildings[n];
 }
 
 function sprayToken(event)
